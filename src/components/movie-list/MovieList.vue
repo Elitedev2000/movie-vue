@@ -1,8 +1,6 @@
 <template lang="">
     <ul class="movie-list list-group">
-        <MovieListItem />
-        <MovieListItem />
-        <MovieListItem />
+        <MovieListItem v-for="movie in movies"/>
     </ul>
 </template>
 <script>
@@ -10,7 +8,25 @@
 export default {
     components: {
         MovieListItem,
-    }
+    },
+    data() {
+        return {
+            movies: [
+                {
+                    name: "Omar",
+                    viewers: 811,
+                },
+                {
+                    name: "Empire of Osman",
+                    viewers: 511,
+                },
+                {
+                    name: "Ertugrul",
+                    viewers: 611,
+                },
+            ]
+        }
+    },
 }
 </script>
 <style scoped>
