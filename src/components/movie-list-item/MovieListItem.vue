@@ -1,7 +1,7 @@
 <template>
   <li class="list-group-item d-flex justify-content-between">
-    <span class="list-group-item-label">Omar</span>
-    <input type="number" class="list-group-item-input" defaultValue="999" />
+    <span class="list-group-item-label">{{ movie.name }}</span>
+    <input type="number" class="list-group-item-input" :value="movie.viewers" />
     
     <div class="d-flex justify-content-center align-items-center">
       <button type="button" class="btn-cookie btn-sm">
@@ -15,6 +15,17 @@
     </div>
   </li>
 </template>
+
+<script>
+export default {
+  props: {
+    movie: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
 
 <style scoped>
 .list-group-item {
@@ -64,11 +75,11 @@
   opacity: 0;
 }
 .list-group-item.like .fa-star {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 .list-group-item.favourite .list-group-item-label,
 .list-group-item.favourite .list-group-item-input {
-    color: #e09f3e;
+  color: #e09f3e;
 }
 </style>
